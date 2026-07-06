@@ -22,6 +22,7 @@ env/
 # Runtime logs and local test captures
 *.log
 test_output.txt
+LOCAL_REFERENCE.md
 
 # Large generated inputs (reproducible via scripts)
 data/covers/
