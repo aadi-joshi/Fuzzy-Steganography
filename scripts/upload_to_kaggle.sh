@@ -5,7 +5,7 @@
 # USAGE:
 #   1. Open your Kaggle notebook and copy the session URL (the one that looks like
 #      https://kkb-production.jupyter-proxy.kaggle.net?token=eyJ...)
-#   2. Run:  bash upload_to_kaggle.sh "YOUR_FULL_URL_WITH_TOKEN"
+#   2. Run:  bash scripts/upload_to_kaggle.sh "YOUR_FULL_URL_WITH_TOKEN"
 #
 # The script will:
 #   • Extract the token from the URL
@@ -15,9 +15,13 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(dirname "$SCRIPT_DIR")"
+NOTEBOOK="${REPO_ROOT}/final.ipynb"
+
 FULL_URL="${1:-}"
 if [[ -z "$FULL_URL" ]]; then
-    echo "Usage: $0 'https://kkb-production.jupyter-proxy.kaggle.net?token=eyJ...'"
+    echo "Usage: bash scripts/upload_to_kaggle.sh 'https://kkb-production.jupyter-proxy.kaggle.net?token=eyJ...'"
     exit 1
 fi
 
@@ -33,7 +37,7 @@ echo ""
 echo "Uploading final.ipynb..."
 PAYLOAD=$(python3 -c "
 import json, sys
-nb = json.load(open('final.ipynb'))
+nb = json.load(open(r'${NOTEBOOK}'))
 body = {'type': 'notebook', 'format': 'json', 'content': nb}
 print(json.dumps(body))
 ")

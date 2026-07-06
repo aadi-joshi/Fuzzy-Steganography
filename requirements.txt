@@ -22,12 +22,11 @@ PyYAML>=6.0
 # Data analysis & visualization
 pandas>=2.0.0
 matplotlib>=3.7.0
-tabulate>=0.9.0             # For Markdown table generation (pandas dependency)
+tabulate>=0.9.0
 
-# LAION-5B dataset downloading
-requests>=2.31.0            # HTTP fetching for download_laion5b.py
-tqdm>=4.65.0                # Progress bars during image download
-pyarrow>=12.0.0             # Parquet file reading for LAION-5B metadata
+# Dataset download utilities (scripts/download_datasets.py)
+requests>=2.31.0
+tqdm>=4.65.0
 
 # Development & testing (optional)
 # pytest>=7.0.0
