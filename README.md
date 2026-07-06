@@ -114,21 +114,23 @@ Generated automatically by Stage 1 of the V2 pipeline into `data/covers_v2/`.
 
 ### Real-world benchmarks (download required)
 
-Each benchmark uses the first 200 images in sorted filename order.
+Each benchmark uses the first 200 images in sorted filename order. Verified download links (checked 2026-07-06):
 
-| Dataset | Format | Local path | Public source |
-|---------|--------|------------|---------------|
-| BOSSBase 1.01 | 512 x 512 PGM | `data/BOSSbase_1.01/` | [Binghamton DDE](http://dde.binghamton.edu/download/ImageDB/BOSSbase_1.01.zip) or [CVUT Stego Data](https://agents.fel.cvut.cz/stegodata/BOSSbase/BOSSbase_1.01.zip) |
-| BOWS2 | 512 x 512 PGM | `data/BOWS2/cover/` | [TU Dresden RSP](http://dud.inf.tu-dresden.de/~westfeld/rsp/bows2-1g.tar.gz) |
-| MIRFLICKR-25K | JPEG (resized to 256 x 256) | `data/mirflickr/` | [LIACS Media Lab](http://press.liacs.nl/mirflickr/mirflickr25k.zip) |
+| Dataset | Format | Local path | Verified download URL |
+|---------|--------|------------|------------------------|
+| BOSSBase 1.01 | 512 x 512 PGM | `data/BOSSbase_1.01/` | http://dde.binghamton.edu/download/ImageDB/BOSSbase_1.01.zip (~1.56 GB) |
+| BOWS2 | 512 x 512 PGM | `data/BOWS2/cover/` | http://dud.inf.tu-dresden.de/~westfeld/rsp/bows2-1g.tar.gz (~175 MB) |
+| MIRFLICKR-25K | JPEG (resized to 256 x 256) | `data/mirflickr/` | https://press.liacs.nl/mirflickr/mirflickr25k.v3b/mirflickr25k.zip (~2.86 GB) |
+
+**Synthetic dataset (1,000 images):** Not downloaded. Generated locally with seed 42 via Stage 1 of the V2 pipeline. No Kaggle or external hosting required.
+
+**Kaggle:** Not used. All real benchmarks are standard public datasets with verified official or archival URLs. See [data/README.md](data/README.md) for alternate mirrors, MD5 checksums, and manual download steps.
 
 Automated download:
 
 ```bash
 python scripts/download_datasets.py --dataset all
 ```
-
-Full dataset documentation, citations, and manual download instructions: [data/README.md](data/README.md).
 
 ---
 

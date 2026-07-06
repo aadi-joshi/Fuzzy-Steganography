@@ -42,12 +42,13 @@ DATASETS = {
             {
                 "url": "http://dde.binghamton.edu/download/ImageDB/BOSSbase_1.01.zip",
                 "type": "zip",
-                "note": "Binghamton University DDE (primary mirror)",
+                "note": "Binghamton University DDE (primary; verified HTTP 200, ~1.56 GB, 2026-07-06)",
+                "size_bytes": 1671626159,
             },
             {
                 "url": "https://agents.fel.cvut.cz/stegodata/BOSSbase/BOSSbase_1.01.zip",
                 "type": "zip",
-                "note": "CVUT Stego Data (alternate mirror)",
+                "note": "CVUT Stego Data alternate mirror (may be slow or unreachable from some networks)",
             },
         ],
     },
@@ -61,7 +62,8 @@ DATASETS = {
             {
                 "url": "http://dud.inf.tu-dresden.de/~westfeld/rsp/bows2-1g.tar.gz",
                 "type": "tar.gz",
-                "note": "TU Dresden RSP archive (images 1-1000, PGM grayscale)",
+                "note": "TU Dresden RSP archive, PGM grayscale, images 1-1000 (verified HTTP 200, ~175 MB, 2026-07-06)",
+                "size_bytes": 183938734,
             },
         ],
     },
@@ -73,9 +75,11 @@ DATASETS = {
         "citation": "Huiskes & Lew, MIRFLICKR-25K, 2008.",
         "sources": [
             {
-                "url": "http://press.liacs.nl/mirflickr/mirflickr25k.zip",
+                "url": "https://press.liacs.nl/mirflickr/mirflickr25k.v3b/mirflickr25k.zip",
                 "type": "zip",
-                "note": "LIACS Media Lab (official MIRFLICKR-25K release)",
+                "note": "LIACS Media Lab official MIRFLICKR-25K release (v3b path; verified 2026-07-06)",
+                "md5": "A23D0A8564EE84CDA5622A6C2F947785",
+                "size_bytes": 3069184257,
             },
         ],
     },
