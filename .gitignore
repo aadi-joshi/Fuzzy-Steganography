@@ -49,11 +49,15 @@ data/outputs_mirflickr/plots/
 Thumbs.db
 desktop.ini
 
-# LaTeX build artifacts
-Steg/*.aux
-Steg/*.log
-Steg/*.out
-Steg/*.bbl
-Steg/*.blg
-Steg/*.synctex.gz
-Steg/*.pdf
+# Legacy local paper workspace (duplicate figures + Word/PDF exports)
+# Tracked sources: docs/paper/main.tex and figures/
+Steg/
+
+# LaTeX build artifacts (docs/paper and any local Steg builds)
+docs/paper/*.aux
+docs/paper/*.log
+docs/paper/*.out
+docs/paper/*.bbl
+docs/paper/*.blg
+docs/paper/*.synctex.gz
+docs/paper/*.pdf

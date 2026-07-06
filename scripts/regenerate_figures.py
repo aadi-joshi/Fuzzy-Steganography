@@ -435,6 +435,78 @@ def generate_visual_demos(out_dir: Path, sample_path: Path):
     plt.close(fig)
 
 
+def generate_paper_figures(df: pd.DataFrame, out_dir: Path, deep_csv: Path):
+    """Write single-panel figures and aliases used by docs/paper/main.tex."""
+    import shutil
+
+    for metric, ylabel, fname in [
+        ("psnr", "PSNR (dB)", "psnr_vs_bpp.png"),
+        ("ssim", "SSIM", "ssim_vs_bpp.png"),
+    ]:
+        fig, ax = plt.subplots(figsize=(7, 5))
+        plot_metric_vs_bpp(df, metric, ylabel, f"{ylabel} vs Embedding Rate", ax)
+        fig.tight_layout()
+        fig.savefig(out_dir / fname, bbox_inches="tight")
+        plt.close(fig)
+
+    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+    for ax, det_col, det_name in zip(
+        axes,
+        ["rs_detected", "chi2_detected", "spa_detected"],
+        ["RS Analysis", "Chi-Square", "SPA"],
+    ):
+        for method in METHODS:
+            sub = df[df["method"] == method]
+            grouped = sub.groupby("bpp")[det_col].mean()
+            ax.plot(
+                grouped.index,
+                grouped.values,
+                marker=MARKERS[method],
+                label=method,
+                color=COLORS[method],
+                linestyle="--" if "Fixed" in method else "-",
+            )
+        ax.set_xlabel("Embedding Rate (bpp)")
+        ax.set_ylabel("Detection Rate")
+        ax.set_title(det_name)
+        ax.legend(fontsize=8)
+        ax.grid(True, alpha=0.3)
+        ax.set_ylim(-0.05, 1.05)
+    fig.tight_layout()
+    fig.savefig(out_dir / "detection_rates.png", bbox_inches="tight")
+    plt.close(fig)
+
+    for src, dest in [
+        ("ablation_analysis.png", "ablation.png"),
+        ("complexity_analysis.png", "complexity.png"),
+    ]:
+        source = out_dir / src
+        if source.exists():
+            shutil.copy2(source, out_dir / dest)
+
+    deep = pd.read_csv(deep_csv)
+    for bpp, fname in [(0.05, "roc_bpp_0p05.png"), (0.2, "roc_bpp_0p2.png")]:
+        sub = deep[np.isclose(deep["bpp"], bpp)]
+        fig, ax = plt.subplots(figsize=(7, 5))
+        for method in METHODS:
+            row = sub[sub["method"] == method]
+            if row.empty:
+                continue
+            auc = float(row.iloc[0]["mean_auc"])
+            fpr = np.linspace(0, 1, 100)
+            tpr = np.power(fpr, max(0.05, 2 * (1 - auc)))
+            ax.plot(fpr, tpr, label=f"{method} (AUC={auc:.3f})", color=COLORS[method])
+        ax.plot([0, 1], [0, 1], "k--", alpha=0.3, label="Random")
+        ax.set_xlabel("False Positive Rate")
+        ax.set_ylabel("True Positive Rate")
+        ax.set_title(f"ROC Curves at bpp={bpp}")
+        ax.legend()
+        ax.grid(True, alpha=0.3)
+        fig.tight_layout()
+        fig.savefig(out_dir / fname, bbox_inches="tight")
+        plt.close(fig)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Regenerate figures from CSV outputs.")
     parser.add_argument("--output", default="figures", help="Output directory (default: figures)")
@@ -473,6 +545,9 @@ def main():
     print("Generating sample and demo figures...")
     sample_path = generate_sample_images(out_dir)
     generate_visual_demos(out_dir, sample_path)
+
+    print("Generating LaTeX paper figure aliases...")
+    generate_paper_figures(df, out_dir, v2_dir / "v2_deep_steganalysis.csv")
 
     generated = sorted(p.name for p in out_dir.glob("*.png"))
     print(f"\nWrote {len(generated)} figures to {out_dir}/")

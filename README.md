@@ -244,6 +244,7 @@ python experiments/generate_report.py --results data/outputs_v2 --output docs/re
 │   ├── outputs_v2/         # Synthetic experiment results (committed)
 │   └── outputs_*/          # Real-dataset results (committed)
 ├── docs/
+│   ├── paper/              # LaTeX manuscript (Elsevier elsarticle)
 │   ├── paper_draft.md      # IEEE TIFS-format paper draft
 │   └── research_report_v2.md
 ├── experiments/            # Pipeline runners and dataset generator
@@ -253,7 +254,6 @@ python experiments/generate_report.py --results data/outputs_v2 --output docs/re
 │   ├── regenerate_figures.py
 │   ├── verify_reproducibility.py
 │   └── upload_to_kaggle.sh
-├── Steg/                   # LaTeX paper source (Elsevier elsarticle)
 ├── stego/                  # Fuzzy controller, entropy/edge features, LSB engines
 ├── final.ipynb             # End-to-end Jupyter notebook
 ├── main.py                 # Legacy V1 entry point

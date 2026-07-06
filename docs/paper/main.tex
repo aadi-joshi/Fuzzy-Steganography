@@ -394,17 +394,22 @@
 \usepackage{placeins}
 \usepackage{xcolor}
 
-\journal{Journal of Information Security and Applications}
+\graphicspath{{../../figures/}}
+
+% Figure paths relative to docs/paper/ -> repository figures/
+\newcommand{\figfile}[1]{../../figures/#1}
 
 \newcommand{\safeincludegraphics}[3]{%
-\IfFileExists{#1}{\includegraphics[#2]{#1}}{%
+\IfFileExists{\figfile{#1}}{\includegraphics[#2]{\figfile{#1}}}{%
 \fbox{\parbox[c][5cm][c]{0.85\linewidth}{\centering #3\\[4pt]\texttt{#1}}}}%
 }
 
 \newcommand{\safesubimage}[2]{%
-\IfFileExists{#1}{\includegraphics[width=\linewidth]{#1}}{%
+\IfFileExists{\figfile{#1}}{\includegraphics[width=\linewidth]{\figfile{#1}}}{%
 \fbox{\parbox[c][2.8cm][c]{0.92\linewidth}{\centering #2\\[2pt]\scriptsize\texttt{#1}}}}%
 }
+
+\journal{Journal of Information Security and Applications}
 
 \begin{document}
 
