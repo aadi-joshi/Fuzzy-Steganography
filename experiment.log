@@ -1,0 +1,49 @@
+2026-02-28 11:12:17,508 [main] INFO: Experiment Configuration:
+2026-02-28 11:12:17,508 [main] INFO:   Random seed     : 42
+2026-02-28 11:12:17,508 [main] INFO:   KDF algorithm   : argon2id
+2026-02-28 11:12:17,508 [main] INFO:   BPP levels      : [0.05, 0.1, 0.2, 0.3, 0.4]
+2026-02-28 11:12:17,508 [main] INFO:   Cover directory  : data/covers
+2026-02-28 11:12:17,508 [main] INFO:   Output directory : data/outputs
+2026-02-28 11:12:17,508 [main] INFO: ============================================================
+2026-02-28 11:12:17,509 [main] INFO: STAGE 1: Running Baseline Experiments
+2026-02-28 11:12:17,509 [main] INFO: ============================================================
+2026-02-28 11:12:19,335 [baseline] INFO: Processing: synthetic_512x512.png
+2026-02-28 11:12:20,033 [baseline] INFO:   depth=1 bpp=0.05: PSNR=69.75dB SSIM=1.0000 RS_det=True
+2026-02-28 11:12:20,684 [baseline] INFO:   depth=1 bpp=0.10: PSNR=66.83dB SSIM=1.0000 RS_det=True
+2026-02-28 11:12:21,449 [baseline] INFO:   depth=1 bpp=0.20: PSNR=63.84dB SSIM=1.0000 RS_det=True
+2026-02-28 11:12:22,093 [baseline] INFO:   depth=1 bpp=0.30: PSNR=62.09dB SSIM=1.0000 RS_det=True
+2026-02-28 11:12:22,536 [baseline] INFO:   depth=1 bpp=0.40: PSNR=60.83dB SSIM=1.0000 RS_det=False
+2026-02-28 11:12:23,004 [baseline] INFO:   depth=2 bpp=0.05: PSNR=65.72dB SSIM=1.0000 RS_det=True
+2026-02-28 11:12:23,702 [baseline] INFO:   depth=2 bpp=0.10: PSNR=62.78dB SSIM=1.0000 RS_det=False
+2026-02-28 11:12:24,309 [baseline] INFO:   depth=2 bpp=0.20: PSNR=59.84dB SSIM=1.0000 RS_det=True
+2026-02-28 11:12:24,986 [baseline] INFO:   depth=2 bpp=0.30: PSNR=58.12dB SSIM=1.0000 RS_det=True
+2026-02-28 11:12:25,611 [baseline] INFO:   depth=2 bpp=0.40: PSNR=56.83dB SSIM=1.0000 RS_det=True
+2026-02-28 11:12:25,612 [baseline] INFO: Baseline results saved to data/outputs/baseline_results.csv
+2026-02-28 11:12:25,613 [main] INFO: Baseline complete → data/outputs/baseline_results.csv
+2026-02-28 11:12:25,613 [main] INFO: ============================================================
+2026-02-28 11:12:25,613 [main] INFO: STAGE 2: Running Adaptive Fuzzy Experiments
+2026-02-28 11:12:25,613 [main] INFO: ============================================================
+2026-02-28 11:12:25,669 [adaptive] INFO: Processing: synthetic_512x512.png
+2026-02-28 11:12:50,291 [adaptive] INFO:   bpp=0.05: PSNR=72.07dB SSIM=1.0000 depth_μ=1.56
+2026-02-28 11:13:15,712 [adaptive] INFO:   bpp=0.10: PSNR=69.21dB SSIM=1.0000 depth_μ=1.56
+2026-02-28 11:13:44,690 [adaptive] INFO:   bpp=0.20: PSNR=66.30dB SSIM=1.0000 depth_μ=1.56
+2026-02-28 11:14:09,200 [adaptive] INFO:   bpp=0.30: PSNR=64.58dB SSIM=1.0000 depth_μ=1.56
+2026-02-28 11:14:32,240 [adaptive] INFO:   bpp=0.40: PSNR=63.34dB SSIM=1.0000 depth_μ=1.56
+2026-02-28 11:14:32,242 [adaptive] INFO: Adaptive results saved to data/outputs/adaptive_results.csv
+2026-02-28 11:14:32,243 [main] INFO: Adaptive complete → data/outputs/adaptive_results.csv
+2026-02-28 11:14:32,243 [main] INFO: ============================================================
+2026-02-28 11:14:32,243 [main] INFO: STAGE 3: Comparative Analysis & Plotting
+2026-02-28 11:14:32,243 [main] INFO: ============================================================
+2026-02-28 11:14:32,901 [compare] INFO: Loaded baseline: 10 rows
+2026-02-28 11:14:32,904 [compare] INFO: Loaded adaptive: 5 rows
+2026-02-28 11:14:33,200 [compare] INFO: Comparison table saved to data/outputs/comparison_table.md
+2026-02-28 11:14:34,146 [compare] INFO:   Plot: psnr_vs_bpp
+2026-02-28 11:14:34,295 [compare] INFO:   Plot: ssim_vs_bpp
+2026-02-28 11:14:34,475 [compare] INFO:   Plot: rs_detection_vs_bpp
+2026-02-28 11:14:34,656 [compare] INFO:   Plot: kl_divergence_vs_bpp
+2026-02-28 11:14:34,970 [compare] INFO:   Plot: distortion_per_bit_vs_bpp
+2026-02-28 11:14:34,970 [compare] INFO: All plots saved to data/outputs/plots/
+2026-02-28 11:14:34,970 [main] INFO: Comparison complete.
+2026-02-28 11:14:34,970 [main] INFO: 
+Total pipeline time: 137.5s
+2026-02-28 11:14:34,970 [main] INFO: Results in: data/outputs/

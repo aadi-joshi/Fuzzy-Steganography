@@ -1,0 +1,3 @@
+[submodule "data/laion5b-downloader"]
+	path = data/laion5b-downloader
+	url = https://github.com/opendatalab/laion5b-downloader.git

@@ -1,0 +1,177 @@
+{
+  "dataset": "BOWS2",
+  "n_images": 200,
+  "results": {
+    "Fixed-LSB-1": {
+      "0.05": {
+        "psnr_mean": 70.45340850000001,
+        "psnr_std": 0.08874621077762763,
+        "ssim_mean": 0.999967,
+        "mse_mean": 0.00585911,
+        "kl_mean": 1.859475e-05,
+        "rs_detection_rate": 0.535,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.79,
+        "n_images": 200
+      },
+      "0.1": {
+        "psnr_mean": 67.44337250000001,
+        "psnr_std": 0.06842542207161333,
+        "ssim_mean": 0.9999340749999999,
+        "mse_mean": 0.011716479999999998,
+        "kl_mean": 5.0003600000000004e-05,
+        "rs_detection_rate": 0.585,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.795,
+        "n_images": 200
+      },
+      "0.2": {
+        "psnr_mean": 64.44290600000001,
+        "psnr_std": 0.04624553504456117,
+        "ssim_mean": 0.999869285,
+        "mse_mean": 0.023378359999999997,
+        "kl_mean": 0.0001367704,
+        "rs_detection_rate": 0.815,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.805,
+        "n_images": 200
+      },
+      "0.3": {
+        "psnr_mean": 62.685769,
+        "psnr_std": 0.03949587649744619,
+        "ssim_mean": 0.9998038749999999,
+        "mse_mean": 0.035036525000000006,
+        "kl_mean": 0.00024644495,
+        "rs_detection_rate": 0.91,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.805,
+        "n_images": 200
+      },
+      "0.4": {
+        "psnr_mean": 61.43838949999999,
+        "psnr_std": 0.033887268621461776,
+        "ssim_mean": 0.9997397050000001,
+        "mse_mean": 0.046693319999999996,
+        "kl_mean": 0.0003733375,
+        "rs_detection_rate": 0.95,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.805,
+        "n_images": 200
+      }
+    },
+    "Fixed-LSB-2": {
+      "0.05": {
+        "psnr_mean": 66.4489085,
+        "psnr_std": 0.17555686154613714,
+        "ssim_mean": 0.9999182350000001,
+        "mse_mean": 0.014741265000000002,
+        "kl_mean": 1.04955e-05,
+        "rs_detection_rate": 0.57,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.785,
+        "n_images": 200
+      },
+      "0.1": {
+        "psnr_mean": 63.43932950000001,
+        "psnr_std": 0.1511433157278085,
+        "ssim_mean": 0.99983552,
+        "mse_mean": 0.029471485,
+        "kl_mean": 2.60166e-05,
+        "rs_detection_rate": 0.585,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.785,
+        "n_images": 200
+      },
+      "0.2": {
+        "psnr_mean": 60.458049499999994,
+        "psnr_std": 0.14049230311988498,
+        "ssim_mean": 0.9996730450000001,
+        "mse_mean": 0.058545429999999996,
+        "kl_mean": 6.79367e-05,
+        "rs_detection_rate": 0.57,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.79,
+        "n_images": 200
+      },
+      "0.3": {
+        "psnr_mean": 58.718146,
+        "psnr_std": 0.1323447021415085,
+        "ssim_mean": 0.99951332,
+        "mse_mean": 0.087389215,
+        "kl_mean": 0.0001215877,
+        "rs_detection_rate": 0.555,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.785,
+        "n_images": 200
+      },
+      "0.4": {
+        "psnr_mean": 57.46452650000001,
+        "psnr_std": 0.1291022821020987,
+        "ssim_mean": 0.999353005,
+        "mse_mean": 0.11663001999999999,
+        "kl_mean": 0.0001859627,
+        "rs_detection_rate": 0.56,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.795,
+        "n_images": 200
+      }
+    },
+    "Adaptive": {
+      "0.05": {
+        "psnr_mean": 73.2568895,
+        "psnr_std": 0.1219697591639107,
+        "ssim_mean": 0.99998103,
+        "mse_mean": 0.00307299,
+        "kl_mean": 7.0852e-06,
+        "rs_detection_rate": 0.565,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.785,
+        "n_images": 200
+      },
+      "0.1": {
+        "psnr_mean": 70.3644825,
+        "psnr_std": 0.09185739463152952,
+        "ssim_mean": 0.999962865,
+        "mse_mean": 0.005980350000000001,
+        "kl_mean": 1.98973e-05,
+        "rs_detection_rate": 0.53,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.795,
+        "n_images": 200
+      },
+      "0.2": {
+        "psnr_mean": 67.401495,
+        "psnr_std": 0.06615247557820987,
+        "ssim_mean": 0.999926685,
+        "mse_mean": 0.01182989,
+        "kl_mean": 5.648439999999999e-05,
+        "rs_detection_rate": 0.58,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.8,
+        "n_images": 200
+      },
+      "0.3": {
+        "psnr_mean": 65.6647925,
+        "psnr_std": 0.05453759289650289,
+        "ssim_mean": 0.99989103,
+        "mse_mean": 0.017645545,
+        "kl_mean": 0.00010151580000000001,
+        "rs_detection_rate": 0.73,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.805,
+        "n_images": 200
+      },
+      "0.4": {
+        "psnr_mean": 64.423581,
+        "psnr_std": 0.047261994452181384,
+        "ssim_mean": 0.9998549950000001,
+        "mse_mean": 0.023482685000000007,
+        "kl_mean": 0.00015588794999999998,
+        "rs_detection_rate": 0.865,
+        "chi2_detection_rate": 1.0,
+        "spa_detection_rate": 0.805,
+        "n_images": 200
+      }
+    }
+  }
+}

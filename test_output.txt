@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/Users/kavyabhand/Desktop/Fuzzy-Steganography-DEV/test_smoke.py", line 14, in test
+    fn()
+  File "/Users/kavyabhand/Desktop/Fuzzy-Steganography-DEV/test_smoke.py", line 42, in test_kdf
+    assert validate_key_entropy(bundle.key)
+AssertionError
+=== Module Import Tests ===
+  PASS: crypto.kdf
+  PASS: crypto.aes
+  PASS: stego.lsb_fixed
+  PASS: stego.entropy
+  PASS: stego.fuzzy
+  PASS: stego.lsb_adaptive
+  PASS: analysis.metrics
+  PASS: analysis.steganalysis
+  PASS: analysis.robustness
+
+=== Functional Tests ===
+  FAIL: KDF derive key: 
+  PASS: AES-GCM encrypt/decrypt
+  PASS: Fixed LSB embed/extract (1-bit)
+  PASS: Fixed LSB embed/extract (2-bit)
+  PASS: Quality metrics
+  PASS: Steganalysis detectors
+  PASS: Fuzzy depth controller
+
+Results: 15 passed, 1 failed

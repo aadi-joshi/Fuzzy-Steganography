@@ -1,0 +1,34 @@
+# =============================================================================
+# Adaptive Fuzzy Logic-Based Steganographic Encryption Framework
+# Python Dependencies
+# =============================================================================
+
+# Core scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Image processing
+Pillow>=10.0.0
+
+# Cryptographic primitives
+cryptography>=41.0.0
+
+# Key derivation (Argon2id) — optional but recommended
+argon2-cffi>=23.1.0
+
+# Configuration
+PyYAML>=6.0
+
+# Data analysis & visualization
+pandas>=2.0.0
+matplotlib>=3.7.0
+tabulate>=0.9.0             # For Markdown table generation (pandas dependency)
+
+# LAION-5B dataset downloading
+requests>=2.31.0            # HTTP fetching for download_laion5b.py
+tqdm>=4.65.0                # Progress bars during image download
+pyarrow>=12.0.0             # Parquet file reading for LAION-5B metadata
+
+# Development & testing (optional)
+# pytest>=7.0.0
+# pytest-cov>=4.0.0

@@ -1,0 +1,6 @@
+image,bpp,pressure,payload_bytes,adaptive_capacity_bytes,mean_depth,depth_std,embed_time_s,extract_time_s,mse,psnr,ssim,kl_divergence,distortion_per_bit,rs_estimated_rate,rs_detected,chi2_embedding_prob,chi2_detected,spa_estimated_rate,spa_detected,extraction_verified,rob_jpeg70_bit_acc,rob_jpeg50_bit_acc,rob_noise001_bit_acc,rob_noise005_bit_acc,rob_crop10_bit_acc
+synthetic_512x512.png,0.05,0.006,782,153092,1.557,0.497,2.5770,2.8776,0.004041,72.07,0.999999,0.000001,0.00000065,0.5000,True,0.6215,True,0.0106,False,True,0.0000,0.0000,0.0000,0.0000,0.0000
+synthetic_512x512.png,0.1,0.011,1519,153092,1.557,0.497,2.1057,3.1426,0.007807,69.21,0.999997,0.000001,0.00000064,0.0109,False,0.5353,True,0.0114,False,True,0.0000,0.0000,0.0000,0.0000,0.0000
+synthetic_512x512.png,0.2,0.022,2993,153092,1.557,0.497,4.6330,3.7623,0.015238,66.30,0.999994,0.000003,0.00000064,0.5000,True,0.7549,True,0.0101,False,True,0.0000,0.0000,0.0000,0.0000,0.0000
+synthetic_512x512.png,0.3,0.033,4468,153092,1.557,0.497,3.3658,2.8907,0.022671,64.58,0.999992,0.000003,0.00000063,0.5000,True,0.5340,True,0.0090,False,True,0.0000,0.0000,0.0000,0.0000,0.0000
+synthetic_512x512.png,0.4,0.044,5943,153092,1.557,0.497,2.4061,2.6376,0.030113,63.34,0.999989,0.000004,0.00000063,0.0062,False,0.5638,True,0.0114,False,True,0.0000,0.0000,0.0000,0.0000,0.0000

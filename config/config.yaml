@@ -1,0 +1,77 @@
+# =============================================================================
+# Adaptive Fuzzy Logic-Based Steganographic Encryption Framework
+# Configuration File
+# =============================================================================
+
+# --- Random Seed for Reproducibility ---
+random_seed: 42
+
+# --- Cryptographic Parameters ---
+crypto:
+  kdf_algorithm: "argon2id"       # Options: argon2id, pbkdf2
+  aes_key_bits: 256
+  aes_mode: "GCM"
+  argon2:
+    time_cost: 3
+    memory_cost: 65536            # 64 MB
+    parallelism: 4
+    hash_len: 32                  # 256 bits
+    salt_len: 16
+  pbkdf2:
+    iterations: 600000
+    hash_algorithm: "sha256"
+    salt_len: 16
+  nonce_len: 12                   # 96-bit nonce for AES-GCM
+
+# --- Steganography Parameters ---
+stego:
+  payload_bpp_levels: [0.05, 0.1, 0.2, 0.3, 0.4]
+  max_lsb_depth: 3               # Maximum bits per channel per pixel
+  header_bits: 64                 # Bits reserved for payload length header
+
+  # Fuzzy system configuration
+  fuzzy:
+    entropy_window_size: 7        # Window size for local entropy calculation
+    entropy_universe: [0.0, 8.0]  # Min/max local entropy
+    edge_universe: [0.0, 1.0]     # Normalized Sobel edge magnitude
+    pressure_universe: [0.0, 1.0] # Payload pressure (used / total capacity)
+    depth_universe: [1.0, 3.0]    # Embedding depth output
+
+    # Membership function parameters (trapezoidal/triangular)
+    entropy_mf:
+      low:    [0.0, 0.0, 1.5, 3.0]
+      medium: [2.0, 3.5, 5.0, 6.5]
+      high:   [5.5, 6.5, 8.0, 8.0]
+
+    edge_mf:
+      weak:   [0.0, 0.0, 0.15, 0.35]
+      moderate: [0.2, 0.4, 0.6, 0.8]
+      strong: [0.65, 0.8, 1.0, 1.0]
+
+    pressure_mf:
+      low:    [0.0, 0.0, 0.2, 0.4]
+      medium: [0.25, 0.45, 0.55, 0.75]
+      high:   [0.6, 0.8, 1.0, 1.0]
+
+    depth_mf:
+      shallow: [1.0, 1.0, 1.3, 1.7]
+      moderate: [1.4, 1.8, 2.2, 2.6]
+      deep:   [2.3, 2.7, 3.0, 3.0]
+
+    # Defuzzification method: centroid, bisector, mom, som, lom
+    defuzzification: "centroid"
+
+# --- Evaluation ---
+evaluation:
+  jpeg_qualities: [70, 50]
+  gaussian_noise_sigma: [0.01, 0.05]
+  crop_percentage: 0.10
+
+# --- Experiment ---
+experiment:
+  cover_dir: "data/covers"
+  output_dir: "data/outputs"
+  results_csv: "data/outputs/results.csv"
+  plot_format: "pdf"              # pdf, png, svg
+  plot_dpi: 300
+  log_level: "INFO"
