@@ -17,7 +17,7 @@ Research code for a Mamdani fuzzy inference system that assigns per-pixel LSB em
 7. [Method Overview](#method-overview)
 8. [Results Summary](#results-summary)
 9. [Limitations](#limitations)
-10. [Citation](#citation)
+10. [License](#license)
 
 ---
 
@@ -343,21 +343,6 @@ Adaptive embedding is approximately 14.4x slower and uses roughly 90x more memor
 - Direct LSB replacement yields 100% chi-square detection across all methods; this is a property of the embedding scheme, not the adaptive controller.
 - Spatial-domain LSB does not survive JPEG recompression.
 - Real-dataset experiments use 200-image subsets; full 10,000-image benchmarks would tighten confidence intervals.
-
----
-
-## Citation
-
-```bibtex
-@misc{bhand2025fuzzystego,
-  title   = {Adaptive Fuzzy Logic-Based Steganographic Encryption Framework},
-  author  = {Bhand, Kavya},
-  year    = {2025},
-  url     = {https://github.com/kavyabhand/Fuzzy-Steganography},
-  note    = {Evaluated on 1,000 synthetic images and validated on BOSSBase, BOWS2,
-             and MIRFLICKR with paired t-tests, Cohen's d, and SRM-lite steganalysis}
-}
-```
 
 ---
 
